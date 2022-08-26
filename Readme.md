@@ -1,6 +1,11 @@
-download all libs:
+## download requirements:
+```bash
 pip install -r requirements.txt
+```
 
 
-run project:
+
+## run project:
+```bash
 python3 main.py
+```
