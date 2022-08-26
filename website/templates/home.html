@@ -1,79 +1,29 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
-    <!-- <h1 align="center">Notes</h1>
-    <ul class="list-group list-group-flush" id="notes">
-      {% for note in user.notes %}
-      <li class="list-group-item">
-        {{ note.data }}
-        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </li>
-      {% endfor %}
-    </ul>
-    <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
-      <br />
-      <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
-      </div>
-    </form> -->
+
+<div id="map"></div>
 
 
-    
-  <head>
-    <meta charset="utf-8" />
-    <title>َSafeMaps | INFO</title>
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
-    <div class="header">
-      <a href="./home.html" class="logo">SafeMaps</a>
-      <div class="header-right">
-        <a href= "./profile.html"
-          ><link href="https://css.gg/profile.css" rel="stylesheet" /><i
-            class="gg-profile"
-          ></i> </a>
-        <a href="./info.html">
-          <link href="https://css.gg/info.css" rel="stylesheet" /><i
-            class="gg-info"
-          ></i
-        ></a>
-      </div>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhX7Ml0xj6jpqeZBWuR4s8x5RidKuGTE&libraries=visualization&callback=initMap"
+defer
+></script>
+<script src="san-francisco.js"></script>
+<script type="text/javascript" src="MakeMap.js"></script>
+
+<link
+href="https://fonts.googleapis.com/css?family=Antic"
+rel="stylesheet"
+type="text/css"
+/>
+
+
+<div class="container">
+  <section>
+    <div class="Map">
+      <container id="Map"> </container>
+      <map id="map"></map>
     </div>
-
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Antic"
-      rel="stylesheet"
-      type="text/css"
-    />
-
-	
-	<div class="container2">
-		<section>
-			<div class="About">
-				<div class="text">
-					<h3>Know your safest way home</h3>
-					<p>This website displays the crime density of the areas of San Francisco. It helps you to avoid the dangerous pathways and reach your destination safely.</p>	
-				</div>
-				<div class="img">
-					<img class= "graphimg" width="50%" 
-                    src="https://media.giphy.com/media/8h63sFtCWI7bp21YBl/giphy.gif"></a>
-				</div>
-			</div> 
-		</section>
-	</div>
-
-
-    <footer>
-      <p><i>SafeMaps, your safer way Home</i></p>
-    </footer>
-  </body>
-
-
+  </section>
+</div>
 
     {% endblock %}

@@ -2,7 +2,6 @@
 <html>
   <head>
 
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -17,14 +16,25 @@
       crossorigin="anonymous"
     />
 
+
+    <!-- Custom home.css -->
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}"/>
     <title>{% block title %}Home{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS only -->
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
+rel="stylesheet"
+integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
+crossorigin="anonymous">
   </head>
 
 
   <body>
 
-
+<!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
       <button
         class="navbar-toggler"
         type="button"
@@ -34,19 +44,26 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="about" href="/about">About</a>
+          <a class="nav-item nav-link" id="profile" href="/profile">Profile</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
           {% else %}
+          <a class="nav-item nav-link" id="about" href="/about">About</a>
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
           {% endif %}
         </div>
       </div>
+
     </nav>
+
+
+
+<!-- LOGIN SIGNUP PAGE STUFF -->
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==
@@ -68,7 +85,7 @@
 
 
 
-    
+
     <div class="container">{% block content %} {% endblock %}</div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -90,5 +107,17 @@
       type="text/javascript"
       src="{{ url_for('static', filename='index.js') }}"
     ></script>
+
+
+<footer>
+  <p><i>SafeMaps, your safer way Home</i></p>
+</footer>
+
+<!-- Bootstrap 5 JavaScript Bundle with Popper -->
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+crossorigin="anonymous"></script>
+
   </body>
 </html>
